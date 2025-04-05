@@ -1,0 +1,27 @@
+[
+    {
+      "question": "What does HTML stand for?",
+      "options": ["HyperText Markup Language", "Hyper Tool Markup Language", "Hyperlinks and Text Markup Language", "None of these"],
+      "answer": "HyperText Markup Language"
+    },
+    {
+      "question": "Which keyword is used for function in Python?",
+      "options": ["function", "def", "fun", "define"],
+      "answer": "def"
+    }, 
+    {
+      "question": "What is the capital of France?",
+      "options": ["Paris", "London", "Berlin", "Madrid"],
+      "answer": "Paris"
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "options": ["Earth", "Mars", "Jupiter", "Venus"],
+      "answer": "Mars"
+    },
+    {
+      "question": "What is 2 + 2?",
+      "options": ["3", "4", "5", "6"],
+      "answer": "4"
+    }
+  ]

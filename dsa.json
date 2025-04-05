@@ -1,0 +1,50 @@
+[
+    {
+      "question": "What is the correct file extension for Python files?",
+      "options": [".pyth", ".pt", ".py", ".pyt"],
+      "answer": ".py"
+    },
+    {
+      "question": "Which keyword is used for function in Python?",
+      "options": ["def", "function", "define", "fun"],
+      "answer": "def"
+    }
+    ,
+    {
+        "question": "What is the time complexity of accessing an element in an array?",
+        "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"],
+        "answer": "O(1)"
+      },
+      {
+        "question": "Which data structure uses LIFO (Last In First Out) order?",
+        "options": ["Queue", "Stack", "Tree", "Graph"],
+        "answer": "Stack"
+      },
+      {
+        "question": "What is the time complexity of QuickSort in the average case?",
+        "options": ["O(n)", "O(n log n)", "O(n^2)", "O(log n)"],
+        "answer": "O(n log n)"
+      },
+      {
+        "question": "Which of the following is not a type of tree?",
+        "options": ["Binary Tree", "AVL Tree", "Heap", "Linked List"],
+        "answer": "Linked List"
+      },
+      {
+        "question": "What is the space complexity of a recursive function?",
+        "options": ["O(1)", "O(n)", "O(log n)", "O(n^2)"],
+        "answer": "O(n)"
+      },
+      {
+        "question": "In which data structure are elements added from both ends?",
+        "options": ["Queue", "Deque", "Stack", "Array"],
+        "answer": "Deque"
+      },
+      {
+        "question": "What is the primary disadvantage of using a linked list over an array?",
+        "options": ["Random access is slow", "Memory consumption is less", "Insertion/deletion is slow", "Arrays are faster for search"],
+        "answer": "Random access is slow"
+      }
+    
+    
+  ]

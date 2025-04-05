@@ -1,0 +1,43 @@
+[
+    {
+      "question": "Which HTML tag is used to define an unordered list?",
+      "options": ["<ul>", "<ol>", "<li>", "<list>"],
+      "answer": "<ul>"
+    },
+    {
+      "question": "What does the <img> tag in HTML represent?",
+      "options": ["Image", "Hyperlink", "Table", "Paragraph"],
+      "answer": "Image"
+    },
+    {
+      "question": "Which attribute is used to specify the destination URL of a link?",
+      "options": ["href", "src", "alt", "title"],
+      "answer": "href"
+    },
+    {
+      "question": "Which of the following is the correct HTML tag to insert a line break?",
+      "options": ["<br>", "<hr>", "<b>", "<p>"],
+      "answer": "<br>"
+    },
+    {
+      "question": "What is the default value of the <table> tag in HTML?",
+      "options": ["block", "inline", "table", "none"],
+      "answer": "table"
+    },
+    {
+      "question": "Which tag is used to define a form in HTML?",
+      "options": ["<form>", "<input>", "<div>", "<button>"],
+      "answer": "<form>"
+    },
+    {
+      "question": "Which HTML attribute specifies the character set for the document?",
+      "options": ["charset", "lang", "type", "src"],
+      "answer": "charset"
+    },
+    {
+      "question": "Which tag is used to define the largest heading in HTML?",
+      "options": ["<h1>", "<h2>", "<h3>", "<h6>"],
+      "answer": "<h1>"
+    }
+  ]
+  

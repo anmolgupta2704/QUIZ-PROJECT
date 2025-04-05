@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.capitalize() }} Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>{{ category.capitalize() }} Quiz</h1>
+            <p>Question {{ q_num }} of {{ total }}</p>
+        </div>
+        
+        <form method="POST" class="quiz-form">
+            <div class="question">
+                <p>{{ question['question'] }}</p>
+            </div>
+            <div class="options">
+                {% for option in question['options'] %}
+                    <label>
+                        <input type="radio" name="option" value="{{ option }}" required>
+                        {{ option }}
+                    </label><br>
+                {% endfor %}
+            </div>
+            <button type="submit" class="submit-button">Next</button>
+        </form>
+    </div>
+</body>
+</html>

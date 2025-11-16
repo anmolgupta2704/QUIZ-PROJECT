@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session ,flash
 import json
 import os
 
@@ -10,6 +10,43 @@ with open("questions.json") as f:
     QUESTIONS = json.load(f)
 with open("dsa.json") as f:
     DSA_QUESTIONS = json.load(f)
+
+
+
+# ---------------- CREATE QUIZ PAGE ----------------
+@app.route('/create_quiz', methods=['GET', 'POST'])
+def create_quiz():
+    if request.method == 'POST':
+        quiz_name = request.form.get('quiz_name').strip().lower().replace(" ", "_")
+        questions = []
+
+        # Get number of questions
+        total = int(request.form.get('total_questions'))
+
+        # Extract all questions dynamically
+        for i in range(1, total + 1):
+            q_text = request.form.get(f'question_{i}')
+            opt1 = request.form.get(f'option1_{i}')
+            opt2 = request.form.get(f'option2_{i}')
+            opt3 = request.form.get(f'option3_{i}')
+            opt4 = request.form.get(f'option4_{i}')
+            correct = request.form.get(f'answer_{i}')
+
+            questions.append({
+                "question": q_text,
+                "options": [opt1, opt2, opt3, opt4],
+                "answer": correct
+            })
+
+        # Save JSON file in quizzes folder
+        filepath = f"quizzes/{quiz_name}.json"
+        with open(filepath, "w") as f:
+            json.dump(questions, f, indent=4)
+
+        flash("Quiz Created Successfully!", "success")
+        return redirect(url_for('categories'))
+
+    return render_template("create_quiz.html")
 
 # Route to show the index page and initialize the session
 @app.route('/')
@@ -42,7 +79,8 @@ def default_quiz():
 def result():
     score = session.get('score', 0)
     total = len(QUESTIONS)
-    return render_template("result.html", score=score, total=total)
+    percentage = round((score / total) * 100, 2)
+    return render_template("result.html", score=score, total=total, percentage=percentage)
 
 # Route to show the available categories (quizzes)
 @app.route('/categories')
@@ -97,7 +135,8 @@ def quiz_result():
     score = request.args.get('score', 0, type=int)
     total = request.args.get('total', 0, type=int)
     category = request.args.get('category', 'default')
-    return render_template("quiz_result.html", score=score, total=total, category=category)
+    percentage = round((score / total) * 100, 2)
+    return render_template("quiz_result.html", score=score, total=total, category=category, percentage=percentage)
 
 # Main entry point to run the Flask app
 if __name__ == '__main__':

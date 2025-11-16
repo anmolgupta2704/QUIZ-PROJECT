@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.capitalize() }} Quiz - Question {{ q_num }}</title>
+
+    <style>
+
+        /* Background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #4c6ef5, #6a82fb);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;      /* Center vertically */
+            padding: 20px;
+        }
+
+        /* Main Card */
+        .container {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            width: 100%;
+            max-width: 650px;
+            padding: 40px;
+            border-radius: 22px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.22);
+            animation: fadeIn 0.7s ease;
+        }
+
+        /* Heading */
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #2b2d42;
+            line-height: 1.4;
+        }
+
+        /* Question */
+        p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        /* Options */
+        .option-box {
+            display: flex;
+            align-items: center;
+            background: #f3f4ff;
+            padding: 14px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            border: 2px solid #d9ddff;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .option-box:hover {
+            background: #e2e6ff;
+            transform: translateX(4px);
+            border-color: #bfc7ff;
+        }
+
+        input[type="radio"] {
+            transform: scale(1.3);
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        /* NEXT BUTTON */
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 25px;
+            background: #4c6ef5;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.25s ease;
+            box-shadow: 0 5px 15px rgba(76,110,245,0.35);
+        }
+
+        input[type="submit"]:hover {
+            background: #3a58d3;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(59,91,219,0.4);
+        }
+
+        /* Fade Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>{{ category.capitalize() }} Quiz – Question {{ q_num }} of {{ total }}</h1>
+
+        <p>{{ question['question'] }}</p>
+
+        <form method="post">
+
+            {% for option in question['options'] %}
+                <label class="option-box">
+                    <input type="radio" name="option" value="{{ option }}" required>
+                    {{ option }}
+                </label>
+            {% endfor %}
+
+            <input type="submit" value="Next">
+        </form>
+
+    </div>
+
+</body>
+</html>

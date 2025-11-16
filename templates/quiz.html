@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ category.capitalize() }} Quiz</title>
+
+    <style>
+
+        /* Background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #4c6ef5, #6a82fb);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 40px;
+        }
+
+        /* Outer Container */
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.88);
+            width: 90%;
+            max-width: 650px;
+            padding: 35px;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.7s ease;
+        }
+
+        /* Header */
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .quiz-header h1 {
+            font-size: 2.2rem;
+            color: #2b2d42;
+            font-weight: 800;
+        }
+
+        .quiz-header p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        /* Question */
+        .question p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Options */
+        .options label {
+            display: block;
+            background: #f5f6ff;
+            padding: 12px 15px;
+            margin-bottom: 12px;
+            border-radius: 10px;
+            border: 2px solid #dfe3ff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .options label:hover {
+            background: #e1e6ff;
+            transform: translateX(5px);
+        }
+
+        .options input[type="radio"] {
+            transform: scale(1.2);
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* Button */
+        .submit-button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            background: #4c6ef5;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76,110,245,0.35);
+        }
+
+        .submit-button:hover {
+            background: #3a58d3;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(59,91,219,0.4);
+        }
+
+        /* Fade Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="quiz-container">
+
+        <div class="quiz-header">
+            <h1>{{ category.capitalize() }} Quiz</h1>
+            <p>Question {{ q_num }} of 5</p>
+        </div>
+        
+        <form method="POST" class="quiz-form">
+            <div class="question">
+                <p>{{ question['question'] }}</p>
+            </div>
+
+            <div class="options">
+                {% for option in question['options'] %}
+                    <label>
+                        <input type="radio" name="option" value="{{ option }}" required>
+                        {{ option }}
+                    </label>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="submit-button">Next</button>
+        </form>
+
+    </div>
+
+</body>
+</html>

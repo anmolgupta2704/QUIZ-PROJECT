@@ -1,0 +1,43 @@
+[
+    {
+      "question": "What is the output of the following code: `print(2 ** 3)`?",
+      "options": ["6", "8", "3", "5"],
+      "answer": "8"
+    },
+    {
+      "question": "Which of the following is used to define a function in Python?",
+      "options": ["def", "function", "define", "func"],
+      "answer": "def"
+    },
+    {
+      "question": "What will be the output of `print(len('hello'))`?",
+      "options": ["4", "5", "6", "0"],
+      "answer": "5"
+    },
+    {
+      "question": "Which of the following methods can be used to add an element at the end of a list?",
+      "options": ["append()", "add()", "insert()", "extend()"],
+      "answer": "append()"
+    },
+    {
+      "question": "What is the output of `print(type(3.14))`?",
+      "options": ["int", "float", "str", "tuple"],
+      "answer": "float"
+    },
+    {
+      "question": "Which of the following is a Python built-in data type?",
+      "options": ["list", "array", "set", "both list and set"],
+      "answer": "both list and set"
+    },
+    {
+      "question": "Which operator is used to check equality in Python?",
+      "options": ["==", "=", "===", "<=>"],
+      "answer": "=="
+    },
+    {
+      "question": "What does `range(5)` produce?",
+      "options": ["[0, 1, 2, 3, 4]", "[1, 2, 3, 4, 5]", "[0, 1, 2, 3, 4, 5]", "[1, 2, 3, 4]"],
+      "answer": "[0, 1, 2, 3, 4]"
+    }
+  ]
+  

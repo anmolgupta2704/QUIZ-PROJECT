@@ -1,23 +1,85 @@
-# Quiz App Project
-An interactive Quiz Application built using Python (Flask) for backend and HTML/CSS/JS for frontend. Users can select categories and attempt quizzes based on JSON-based question banks.
+# 🧠 Quiz App — Flask Based
 
-## Features
+A modern, beautiful, and fully customizable Quiz Application where users can create quizzes, play multiple categories, and get instant results.
+Styled with Glassmorphism + Gradients for a premium feel.
 
-📁 Multiple quiz categories: Python, HTML, DSA
-🧪 Auto-graded quizzes with instant results
-🎯 Tracks score and provides feedback
-📄 JSON-based question storage (easy to modify or extend)
-🎨 Clean and responsive UI using HTML + CSS
+# Live Features
+   ✨ Beautiful UI with gradients & glassmorphism
 
-## Project Structure
+   📚 Multiple quiz categories
+
+   📝 User-created quizzes with auto JSON saving
+
+   📊 Score + percentage calculation
+
+   🔄 Dynamic question flow
+
+   📱 Fully responsive design
+
+   ⚡ Fast & lightweight Flask app
+
+    🎨 Professional UI on every page
+
+   💾 Session-based tracking
+
+# 🎯 Tech Stack
+
+| Technology         | Used For               |
+| ------------------ | ---------------------- |
+| **Python / Flask** | Backend Logic, Routing |
+| **HTML + CSS**     | UI Pages               |
+| **Jinja2**         | Rendering Dynamic Data |
+| **JSON**           | Storing Quiz Data      |
+| **Sessions**       | Score Tracking         |
+
+# 📁 Project Structure
+
 ```bash
-QUIZ-PROJECT/
+quiz-app/
 │
-├── app.py                 # Flask backend server
-├── style.css              # Stylesheet
-├── *.html                 # HTML templates for UI (index, quiz, result, etc.)
-├── python.json            # Python quiz questions
-├── html.json              # HTML quiz questions
-├── dsa.json               # DSA quiz questions
-├── questions.json         # (Optional) General question file
-└── tempCodeRunnerFile.py  # Temporary file (can be deleted)
+├── app.py
+├── quizzes/
+│   ├── html.json
+│   ├── python.json
+│   ├── dsa.json
+│   └── (user quizzes saved here)
+│
+├── templates/
+│   ├── index.html
+│   ├── categories.html
+│   ├── create_quiz.html
+│   ├── quiz_question.html
+│   ├── quiz_result.html
+│   └── result.html
+│
+├── static/
+│   └── style.css
+│
+├── .gitignore
+└── README.md
+```
+# ⚙️ Installation
+
+1️⃣ Clone Repo
+```bash
+git clone https://github.com/your-username/quiz-app.git
+cd quiz-app
+```
+2️⃣ Create Virtual Environment
+```bash
+python -m venv venv
+```
+3️⃣ Activate Environment
+
+```bash
+venv\Scripts\activate
+```
+4️⃣ Install Requirements
+```bash
+pip install flask
+```
+
+5️⃣ Start App
+```bash
+python app.py
+```

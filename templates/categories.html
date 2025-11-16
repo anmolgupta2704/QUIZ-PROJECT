@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Categories</title>
+
+    <style>
+
+        /* Background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #4c6ef5, #6a82fb);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding-top: 40px;
+        }
+
+        /* Main Card */
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 600px;
+            padding: 35px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.7s ease;
+        }
+
+        /* Heading */
+        h1 {
+            margin-bottom: 25px;
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: #2b2d42;
+        }
+
+        /* List */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin: 15px 0;
+        }
+
+        /* Category Button */
+        .button {
+            display: block;
+            background: #4c6ef5;
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            font-size: 1.15rem;
+            border-radius: 10px;
+            transition: 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(76, 110, 245, 0.3);
+        }
+
+        .button:hover {
+            background: #3b5bdb;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(59, 91, 219, 0.4);
+        }
+
+        /* Create Quiz Button */
+        ul a[href="/create_quiz"] {
+            display: block;
+            margin-top: 25px;
+            padding: 12px;
+            font-size: 1.1rem;
+            text-align: center;
+            background: #37b24d;
+            color: white;
+            font-weight: 600;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(55, 178, 77, 0.3);
+            transition: 0.3s;
+        }
+
+        ul a[href="/create_quiz"]:hover {
+            background: #2f9e44;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(47, 158, 68, 0.4);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Choose a Category</h1>
+
+        <ul>
+            {% for category in categories %}
+                <li><a href="/quiz/{{ category }}" class="button">{{ category.capitalize() }} Quiz</a></li>
+            {% endfor %}
+
+            <a href="/create_quiz">➕ Create Your Own Quiz</a>
+        </ul>
+    </div>
+</body>
+</html>

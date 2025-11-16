@@ -1,0 +1,37 @@
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+build/
+dist/
+
+# Virtual Environment
+venv/
+.env/
+env/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+
+# Flask Session Files
+instance/
+*.sqlite3
+
+# PyCharm
+*.iml
+
+# Logs
+*.log
+logs/
+
+# Uploaded quizzes (if not required)
+# quizzes/*.json

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+
+    <style>
+
+        /* Background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #4c6ef5, #6a82fb);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 50px;
+        }
+
+        /* Result Box */
+        .container {
+            background: rgba(255, 255, 255, 0.88);
+            width: 90%;
+            max-width: 600px;
+            padding: 40px;
+            text-align: center;
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            animation: fadeIn 0.7s ease;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2b2d42;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Back Button */
+        a {
+            display: inline-block;
+            background: #4c6ef5;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 14px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76,110,245,0.35);
+        }
+
+        a:hover {
+            background: #3b5bdb;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(59,91,219,0.4);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Quiz Completed!</h1>
+
+        <p>Your score: <b>{{ score }}</b> out of <b>{{ total }}</b></p>
+        <p>Percentage: <b>{{ percentage }}%</b></p>
+        <a href="{{ url_for('index') }}">Go Back to Home</a>
+    </div>
+
+</body>
+</html>

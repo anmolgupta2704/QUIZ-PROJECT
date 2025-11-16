@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+
+    <style>
+
+        /* Background */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #4c6ef5, #6a82fb);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding-top: 40px;
+        }
+
+        /* Main Form Card */
+        .container {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(10px);
+            width: 90%;
+            max-width: 650px;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+            animation: fadeIn 0.7s ease;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #2b2d42;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            border: 2px solid #ccd5ff;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: #4c6ef5;
+            box-shadow: 0 0 8px rgba(76,110,245,0.4);
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: #3b5bdb;
+            font-size: 1.3rem;
+        }
+
+        /* Buttons */
+        button {
+            background: #4c6ef5;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(76,110,245,0.35);
+        }
+
+        button:hover {
+            background: #3b5bdb;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(59,91,219,0.4);
+        }
+
+        #questions_area {
+            margin-top: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 1.5px;
+            background: #d7dafe;
+            margin: 25px 0;
+        }
+
+        /* Fade animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Create Your Own Quiz</h1>
+
+        <form method="POST">
+
+            <label>Quiz Name:</label>
+            <input type="text" name="quiz_name" placeholder="Enter quiz name..." required>
+
+            <label>Total Questions:</label>
+            <input type="number" id="total_questions" name="total_questions" min="1" value="1" required>
+
+            <button type="button" onclick="addQuestions()">Add Questions</button>
+
+            <div id="questions_area"></div>
+
+            <button type="submit" style="margin-top:20px;">Save Quiz</button>
+
+        </form>
+
+    </div>
+
+    <script>
+        function addQuestions() {
+            let total = document.getElementById("total_questions").value;
+            let area = document.getElementById("questions_area");
+            area.innerHTML = "";
+
+            for (let i = 1; i <= total; i++) {
+                area.innerHTML += `
+                    <h3>Question ${i}</h3>
+
+                    <input type="text" name="question_${i}" placeholder="Enter question" required>
+
+                    <input type="text" name="option1_${i}" placeholder="Option 1" required>
+                    <input type="text" name="option2_${i}" placeholder="Option 2" required>
+                    <input type="text" name="option3_${i}" placeholder="Option 3" required>
+                    <input type="text" name="option4_${i}" placeholder="Option 4" required>
+
+                    <label>Correct Answer:</label>
+                    <select name="answer_${i}">
+                        <option value="" disabled selected>Select Answer</option>
+                        <option value="Option 1">Option 1</option>
+                        <option value="Option 2">Option 2</option>
+                        <option value="Option 3">Option 3</option>
+                        <option value="Option 4">Option 4</option>
+                    </select>
+
+                    <hr>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>
